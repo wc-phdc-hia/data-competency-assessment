@@ -1,4 +1,14 @@
-# Data competency assessment
+# Data competency assessment <!-- omit in toc -->
+
+- [Dependencies](#dependencies)
+- [Instructions](#instructions)
+- [Submission](#submission)
+- [Overview](#overview)
+- [Assessment (Section A: Theory)](#assessment-section-a-theory)
+- [Assessment (Section B: Practical)](#assessment-section-b-practical)
+  - [**Question 1: Data Imports \[30 marks, approx. 70 minutes\]**](#question-1-data-imports-30-marks-approx-70-minutes)
+  - [**Question 2: Data Transformation \[15 marks, approx. 40 minutes\]**](#question-2-data-transformation-15-marks-approx-40-minutes)
+    - [Dataset columns](#dataset-columns)
 
 ## Dependencies
 

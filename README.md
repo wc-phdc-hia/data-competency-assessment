@@ -84,7 +84,7 @@ Please answer here.
 
 ---
 
-4. The PHDC houses extremely sensitive health data. Legislations have come into effect both internationally and locally (e.g. POPI, the protection of personal information act) to protect sensitive data. Give at least 3 points briefly describing what you would implement on an environment you manage to be able to report on who accessed sensitive data and when.
+4. The PHDC houses extremely sensitive health data. Legislations have come into effect both internationally and locally (e.g. POPIA, the protection of personal information act) to protect sensitive data. Give at least 3 points briefly describing what you would implement on an environment you manage to be able to report on who accessed sensitive data and when.
 
 **[2 marks]**
 

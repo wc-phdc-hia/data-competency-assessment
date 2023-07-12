@@ -49,10 +49,9 @@ Please fork this repository to your own GitHub account. You will need to give yo
 ## Overview
 
 - The theory section should take approximately 30 minutes to complete. 
-- The practical section should take approximately 90 minutes to complete, however you have 
-extra time. 
+- The practical section should take approximately 90 minutes to complete, however you have extra time. 
 
-## Assessment (Section A: Theory)
+## Assessment (Section A: Theory) [20 marks]
 
 1. The Provincial Health Data Centre contains data from multiple different sources and acquires data in different formats. List at least 3 factors that would be crucial for harmonising data into a consolidated environment.  
 
@@ -161,7 +160,60 @@ Please answer here (use code fencing with the appropriate language to denote cod
 
 ---
 
-## Assessment (Section B: Practical)
+8. The Levenshtein distance algorithm (see [here](http://www.kodyaz.com/articles/fuzzy-string-matching-using-levenshtein-distance-sql-server.aspx)) is often used to perform imprecise matching between records, with a lower distance signalling a closer match (with zero being an exact match). For example the computed Levenshtein distance for the two strings _medical_ and _radical_ is two, meaning that two edits are needed to change one string into the other. A known MS SQL implementation of the Levenchtein distance algorithm is shown in the code block below. Please modify the function to include a parameter which if set to 1 returns the distance as a percentage of the length of the longer of the two strings, and if set to 0 (default) returns the edit distance as in the original version. Place the modified function script in the `code` folder.
+
+```sql
+CREATE FUNCTION edit_distance(@s1 nvarchar(3999), @s2 nvarchar(3999))
+RETURNS int
+AS
+BEGIN
+ DECLARE @s1_len int, @s2_len int
+ DECLARE @i int, @j int, @s1_char nchar, @c int, @c_temp int
+ DECLARE @cv0 varbinary(8000), @cv1 varbinary(8000)
+
+ SELECT
+  @s1_len = LEN(@s1),
+  @s2_len = LEN(@s2),
+  @cv1 = 0x0000,
+  @j = 1, @i = 1, @c = 0
+
+ WHILE @j <= @s2_len
+  SELECT @cv1 = @cv1 + CAST(@j AS binary(2)), @j = @j + 1
+
+ WHILE @i <= @s1_len
+ BEGIN
+  SELECT
+   @s1_char = SUBSTRING(@s1, @i, 1),
+   @c = @i,
+   @cv0 = CAST(@i AS binary(2)),
+   @j = 1
+
+  WHILE @j <= @s2_len
+  BEGIN
+   SET @c = @c + 1
+   SET @c_temp = CAST(SUBSTRING(@cv1, @j+@j-1, 2) AS int) +
+    CASE WHEN @s1_char = SUBSTRING(@s2, @j, 1) THEN 0 ELSE 1 END
+   IF @c > @c_temp SET @c = @c_temp
+   SET @c_temp = CAST(SUBSTRING(@cv1, @j+@j+1, 2) AS int)+1
+   IF @c > @c_temp SET @c = @c_temp
+   SELECT @cv0 = @cv0 + CAST(@c AS binary(2)), @j = @j + 1
+ END
+
+ SELECT @cv1 = @cv0, @i = @i + 1
+ END
+
+ RETURN @c
+END
+```
+**[5 marks]**
+
+---
+**Answer A.9**  
+Please add any notes, instructions or other information here.
+
+---
+
+## Assessment (Section B: Practical) [45 marks]
 
 For this practical assessment you have been given the following two files in the `data` folder:
 
@@ -170,7 +222,7 @@ ID, sex, date of birth, lab test type, lab test date, and lab test result.
 - **medicine_data.csv**: This contains medicine dispensing data for diabetic patients including: 
 patient ID, sex, date of birth, medicine name, and dispensing date.
 
-> **Note:** Please note that the patient ID is a unique identifier for the patient; i.e., each unique person has one "patient ID" that can be used to identify them.
+> **Note**: Please note that the patient ID is a unique identifier for the patient; i.e., each unique person has one "patient ID" that can be used to identify them.
 
 ### **Question 1: Data Imports [30 marks, approx. 70 minutes]**
 
@@ -246,8 +298,10 @@ of medicines
 Please add any notes, instructions or other information here.
 
 ---
-### **[Bonus] Question 3: Data Visualisation** <!-- omit in toc -->
-> **Note:** This question is not compulsory and will have no penalties on the review of this assessment. You may choose to do this question if you have extra time.
+## **[Bonus]: Data Visualisation** <!-- omit in toc -->
+
+> **Note**: This question is not compulsory and will have no penalties on the review of this assessment. You may choose to do this question if you have extra time.
+
 1. Create a visualisation of the data imported. Your visualisation should include at least the following indicators (you may include other indicators too). Please state the software you used and include a screenshot of the visualisation in the `assets` folder.
 - Medicine dispensing categories stratified by age group
 - Diabetic treatment follow up flag stratified by age group and medicine category

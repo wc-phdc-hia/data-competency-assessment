@@ -14,11 +14,15 @@
 
 You should have received the following notes by email prior to the assessment:
 
-1. You will need an a GitHub account with multi-factor authentication enabled.
-2. You will need your reviewers GitHub username or email address.
-3. You will need git installed on your machine. If you are a Windows user, you can download it from [here](https://git-scm.com/downloads).
-4. We suggest using Visual Studio Code to complete the assessment. You can download it from [here](https://code.visualstudio.com/download). If you have a preferred text editor or IDE, you are welcome to use that instead, but VS Code has excellent support for markdown editing (See [Markdown preview](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview)).
-5. You can assume that your reviewer has `python 3` and `pip3` installed on their machine. If you wish to use a different language, please provide a comprehensive environment setup guide. The reviewer will make a best-effort attempt at following your instructions, but you will be penalised if your instructions have missing steps or are unclear. For your decision making, at least one portion of the assessment will require the writing of unit tests.
+1. You will need approximately 2 hours free to complete this assessment.
+2. You will need an a GitHub account with multi-factor authentication enabled.
+3. You will need your reviewers GitHub username or email address.
+4. You will need git installed on your machine. If you are a Windows user, you can download it from [here](https://git-scm.com/downloads).
+5. We suggest using Visual Studio Code to complete the assessment. You can download it from [here](https://code.visualstudio.com/download). If you have a preferred text editor or IDE, you are welcome to use that instead, but VS Code has excellent support for markdown editing (See [Markdown preview](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview)).
+6. You can assume that your reviewer has `python 3` and `pip3` installed on their machine. If you wish to use a different language, please provide a comprehensive environment setup guide. The reviewer will make a best-effort attempt at following your instructions, but you will be penalised if your instructions have missing steps or are unclear. For your decision making, at least one portion of the assessment will require the writing of unit tests. It is advantageous to use Python and/or MSSQL. 
+7. If you are using a relational database language to complete the test (e.g. MS SQL, MySQL, SQLite, Postgres etc.) you should have a blank database set up where you have full administrative rights to create objects and generate scripts that would create the database and all objects. If you are using a relational database language please also script a database backup that we could restore. 
+8. If you do not have access to a machine of your own on which to complete this assessment, please contact us to arrange an in-person assessment.
+9. Git is a widely used standard that is essential to the toolkit of anyone writing code in an organisation committed to sustainable practices. If you are unfamiliar with git and unable to familiarise yourself with it prior to the assessment, please do inform us, and you could send your scripts to us in an alternative manner. However it would be highly advantageous that you utilise git and candidates who do not may be at a relative disadvantage.
 
 > **Note**: If you were not previously instructed on the above, please let your reviewer know immediately and you may have an additional **45 minutes** to complete the assessment.
 
@@ -37,7 +41,7 @@ This competency assessment consists of a theory section and a practical componen
 9. You may use the internet to assist you with your answers.
 10. There is a bonus question at the end of the assessment. Please do not rush to get to it as it will not affect the assessment and does not count. It is merely a showcase.
 
-> **Note**: Once you have completed the assessment, please email a link to your forked repository to your reviewer -- by **12.30pm** if your assessment time was 9am-12pm, or by **3.30pm** if your assessment time was 12pm-3pm.
+> **Note**: Once you have completed the assessment, please email a link to your forked repository to your reviewer within 3 hours of starting the assessment. 
 
 ## Submission
    
@@ -221,7 +225,7 @@ Please add any notes, instructions or other information here.
 
 ### **Question 2: Data Transformation [15 marks, approx. 40 minutes]**
 
-You have been provided data in a long format. In this question you will be required to construct a wide dataset that could be used to track each individual patient’s health. Your dataset should contain one line per patient and should contain the columns listed below.  
+In this question you will be required to construct a wide dataset that could be used to track each individual patient’s health. Your dataset should contain one line per patient and should contain the columns listed below.  
 
 Write a script to transform the data into a wide format, output it to a file and add it to the `code` folder. 
 

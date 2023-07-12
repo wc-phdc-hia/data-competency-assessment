@@ -208,7 +208,7 @@ END
 **[5 marks]**
 
 ---
-**Answer A.9**  
+**Answer A.8**  
 Please add any notes, instructions or other information here.
 
 ---

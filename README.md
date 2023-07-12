@@ -64,7 +64,7 @@ Please answer here.
 
 ---
  
-2. At the Provincial Health Data Centre we often receive requests for data for analysis purposes, whereby it is unnecessary for the analyst to know the identity of the patient. As part of your work you may have to release a fully de-identified dataset (i.e., a dataset from which you could not re-identify the patients included). List at least two points describing how you could obfuscate the data so that it could not be re-identified.  
+2. You have written a query for a complex dataset with multiple calculations that returns millions of records. The query is performing poorly, provide at least 3 points describing how you would optimise the query. 
 
 **[2 marks]**
 
@@ -74,7 +74,7 @@ Please answer here.
 
 ---
 
-3. An HbA1c level of 6.5% or more is considered high enough to diagnose diabetes, while values lower than 6.5% indicate healthy patients. A programmer incorrectly wrote the code to identify diabetics as: HbA1c > 6.5% and as such 300 patients with HbA1c = 6.5% were classified as healthy patients. In statistical terms, what could those 300 patients could be classified as? 
+3. An ETL pipeline has been developed that fetches data from source, imports it into a staging area where transformations are completed and then loads the data into a standardised repository, from which report queries are run. A user has identified that there is an error in a report. Give at least 5 points describing how you would go about debugging the code and mitigating such errors in future. 
 
 **[2 marks]**
 
@@ -82,13 +82,9 @@ Please answer here.
 **Answer A.3**  
 Please answer here.
 
-- [ ] False positives
-- [ ] False negatives
-- [ ] Type 1 error
-
 ---
 
-4. Knowing the medication a patient is taking often can indicate what health condition they have. For example if a patient is regularly prescribed insulin it is likely that they have chronic diabetes. However, in some cases patients that do not have chronic diabetes may be given insulin for short periods in hospital. Suppose there was a register of all patients who have been diagnosed with chronic diabetes by a doctor. You have been tasked with trying to reproduce this register based on insulin dispensing data alone. What statistical term would best describe the percentage of patients with chronic diabetes who were correctly identified as having the condition?
+4. The PHDC houses extremely sensitive health data. Legislations have come into effect both internationally and locally (e.g. POPI, the protection of personal information act) to protect sensitive data. Give at least 3 points briefly describing what you would implement on an environment you manage to be able to report on who accessed sensitive data and when.
 
 **[2 marks]**
 
@@ -96,23 +92,15 @@ Please answer here.
 **Answer A.4**  
 Please answer here.
 
-- [ ] Specificity
-- [ ] Sensitivity
-- [ ] True negative rate
-
 ---
 
-5. There are two laboratory tests that can be used to monitor HIV over time, viral load and CD4 count. An HIV+ patient on treatment will typically have one viral load and CD4 count test per year. When preparing data for an analyst they might request the dataset in "long" or "wide" format. 
-Which of the following dataset descriptions best describes a "wide" dataset?
+5.  You are asked to onboard a new dataset from a database maintained by cardiologists for patients with congenital heart defects.  Take us through your approach to this. 
 
 **[1 mark]**
 
 ---
 **Answer A.5**  
 Please answer here.
-
-- [ ] Each line in the dataset contains one test result, with only a few columns
-- [ ] Each line in the dataset contains one patient, with multiple columns
 
 ---
 
@@ -268,3 +256,5 @@ Please add any notes, instructions or other information here.
 Please add any notes here.
 
 ---
+
+

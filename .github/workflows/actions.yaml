@@ -1,0 +1,14 @@
+name: Lint
+on:
+  push:
+    branches:
+      - main
+      - test
+
+jobs:
+  helloworld:
+      name: Example
+      runs-on: ubuntu-latest
+      steps:
+        - name: Echo 'Hello World!''
+          run: echo 'Hello World!'
